@@ -53,7 +53,7 @@ class Mycontroller extends Controller
             return redirect()->route('admin');
         }
         else{
-            return "dang nhap that bai";
+            return redirect()->route('trangchu');
         }
     }
     public function sign_up(){
