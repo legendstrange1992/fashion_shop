@@ -50,7 +50,13 @@ class Mycontroller extends Controller
         $email = $req->email;
         $password = $req->password;
         if(Auth::attempt(['email'=>$email,'password'=>$password])){
-            return redirect()->route('admin');
+            if(Auth::user()->level == 1){
+                return redirect()->route('admin');
+            }
+            else{
+                return redirect()->route('trangchu');
+            }
+            
         }
         else{
             return redirect()->route('trangchu');
@@ -58,5 +64,9 @@ class Mycontroller extends Controller
     }
     public function sign_up(){
         return view('auth.register');
+    }
+    public function logout_user(){
+        Auth::logout();
+        return redirect()->route('trangchu');
     }
 }

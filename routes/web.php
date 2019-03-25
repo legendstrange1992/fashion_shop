@@ -33,7 +33,7 @@ Route::get('product','Admin_Controller@product')->name('product');
 Route::post('login-admin','Mycontroller@login_admin')->name('login_admin');
 Route::get('sign-up','Mycontroller@sign_up')->name('sign_up');
 Route::get('logout','Admin_Controller@logout')->name('logout');
-
+Route::get('logout-user','Mycontroller@logout_user')->name('logout_user');
 Route::get('xoa-don-hang/{id_donhang}','Admin_Controller@xoa_donhang')->name('xoa_donhang');
 Route::get('upload-san-pham','Admin_Controller@upload_sanpham')->name('upload_sanpham');
 

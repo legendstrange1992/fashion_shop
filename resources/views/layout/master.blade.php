@@ -314,8 +314,13 @@
 						</li>
 
 						<li class="p-b-10">
-							<a class="stext-107 cl7 hov-cl1 trans-04 login">
+							<a class="stext-107 cl7 hov-cl1 trans-04 <?php if(Auth::check()){echo '';}else{echo 'login';} ?> " >
 								<span style="color:#CCC;">Login</span>
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a class="stext-107 cl7 hov-cl1 trans-04" href="{{route('logout_user')}}">
+								<span style="color:#CCC;">Logout User {!!  Auth::user()->name ?? '' !!}</span>
 							</a>
 						</li>
 					</ul>
