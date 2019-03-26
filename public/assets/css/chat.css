@@ -29,6 +29,8 @@
 	margin-bottom:5px; 
 }
 .admin{
+    clear: both;
+    float: left;
 	font-size: 12px;
     color: #585858;
     line-height: 1.6;

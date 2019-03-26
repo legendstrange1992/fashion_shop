@@ -1,6 +1,4 @@
 $(function(){
-    
-    
     socket.on('server_send_cart_header',function(data){
         $('.soluong_header').attr('data-notify',data.length);
         $('.soluong_header_mobile').attr('data-notify',data.length);
