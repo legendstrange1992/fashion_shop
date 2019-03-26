@@ -36,6 +36,10 @@ class Admin_Controller extends Controller
         $sanpham = SanPham::all();
         return view('pages.sanpham',compact('active_sanpham','sanpham'));
     }
+    public function chat_user(){
+        $active_chat= 'active';
+        return view('pages.chat_user',compact('active_chat'));
+    }
     public function upload_file_temp(Request $request){
         if($request->hasFile('file')){
             $file = $request->file('file');

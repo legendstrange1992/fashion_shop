@@ -61,39 +61,31 @@
 
 			<div class="sidebar-content flex-w w-full p-lr-65 js-pscroll">
 				<ul class="sidebar-link w-full">
+					<?php
+						if(Auth::check()){
+					?>
+					<li class="p-b-13">
+						<a class="stext-102 cl2 hov-cl1 trans-04">
+							<?php
+								$name_user = Auth::user()->name;
+							?>
+							Welcome : <span style='color:orange;font-weight:bold;'><?php echo $name_user ?></span> , 
+							<a href="{{route('logout_user')}}">Logout</a>
+						</a>
+					</li>
+					<?php
+						}
+						else{
+					?>
+					<li class="p-b-13">
+						<a  class="stext-102 cl2 hov-cl1 trans-04 login">
+							Login
+						</a>
+					</li>
+					<?php } ?>
 					<li class="p-b-13">
 						<a href="index.html" class="stext-102 cl2 hov-cl1 trans-04">
-							Home
-						</a>
-					</li>
-
-					<li class="p-b-13">
-						<a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-							My Wishlist
-						</a>
-					</li>
-
-					<li class="p-b-13">
-						<a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-							My Account
-						</a>
-					</li>
-
-					<li class="p-b-13">
-						<a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-							Track Oder
-						</a>
-					</li>
-
-					<li class="p-b-13">
-						<a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-							Refunds
-						</a>
-					</li>
-
-					<li class="p-b-13">
-						<a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-							Help & FAQs
+							Sign Up
 						</a>
 					</li>
 				</ul>
@@ -320,7 +312,7 @@
 						</li>
 						<li class="p-b-10">
 							<a class="stext-107 cl7 hov-cl1 trans-04" href="{{route('logout_user')}}">
-								<span style="color:#CCC;">Logout User {!!  Auth::user()->name ?? '' !!}</span>
+								<span style="color:#CCC;"><?php if(Auth::check()){ echo Auth::user()->name." , Logout"; }else{echo '';} ?> </span>
 							</a>
 						</li>
 					</ul>

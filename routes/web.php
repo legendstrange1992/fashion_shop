@@ -36,6 +36,7 @@ Route::get('logout','Admin_Controller@logout')->name('logout');
 Route::get('logout-user','Mycontroller@logout_user')->name('logout_user');
 Route::get('xoa-don-hang/{id_donhang}','Admin_Controller@xoa_donhang')->name('xoa_donhang');
 Route::get('upload-san-pham','Admin_Controller@upload_sanpham')->name('upload_sanpham');
+Route::get('chat-user','Admin_Controller@chat_user')->name('chat_user');
 
 Route::post('upload-file-temp','Admin_Controller@upload_file_temp');
 Route::post('upload-file','Admin_Controller@upload_file')->name('upload_file');

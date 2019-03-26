@@ -17,7 +17,9 @@
   <link href="{{asset('assets/css/material-dashboard.css?v=2.1.1')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('assets/demo/demo.css')}}" rel="stylesheet" />
+  <link href="{{asset('assets/css/chat.css')}}" rel="stylesheet" />
   <script src="{{asset('js')}}/jquery-3.3.1.js"></script>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
  
   <style>
     a:hover{cursor: pointer;}
@@ -58,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item {{ $active_chat ?? ''}}">
-            <a class="nav-link" href="{{route('upload_sanpham')}}">
+            <a class="nav-link" href="{{route('chat_user')}}">
               <i class="material-icons">library_books</i>
               <p>Chat - Khách Hàng</p>
             </a>
