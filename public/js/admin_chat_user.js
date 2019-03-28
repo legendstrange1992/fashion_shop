@@ -40,10 +40,20 @@ $(function(){
         $('.content-chat-admin').html('');
         for(let i = 0 ; i < count ; i++){
             if(data[i].user == user){
-            $('.content-chat-admin').append("<p class='admin'><span style='font-weight: bold;'></span>"+data[i].noidung+"</p></br>");
+                if(data[i].noidung.length  > 30){
+                    $('.content-chat-admin').append("<p class='admin' style='width:80%;'>"+data[i].noidung+"</p></br>");
+                }
+                else{
+                    $('.content-chat-admin').append("<p class='admin'>"+data[i].noidung+"</p></br>");
+                }
             }
             else{
-            $('.content-chat-admin').append("<p class='user'><span style='font-weight: bold;'></span>"+data[i].noidung+"</p></br>");
+                if(data[i].noidung.length  > 30){
+                    $('.content-chat-admin').append("<p class='user' style='width:80%;'>"+data[i].noidung+"</p></br>");
+                }
+                else{
+                    $('.content-chat-admin').append("<p class='user'>"+data[i].noidung+"</p></br>");
+                }
             }
         }
         $(".content-chat-admin").scrollTop($(".content-chat-admin")[0].scrollHeight);
@@ -55,10 +65,20 @@ $(function(){
         $('.content-chat-admin').html('');
         for(let i = 0 ; i < count ; i++){
             if(result[i].user == user){
-            $('.content-chat-admin').append("<p class='admin'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+                if(result[i].noidung.length > 30){
+                    $('.content-chat-admin').append("<p class='admin' style='width:80%;'>"+result[i].noidung+"</p></br>");
+                }
+                else{
+                    $('.content-chat-admin').append("<p class='admin'>"+result[i].noidung+"</p></br>");
+                }
             }
             else{
-            $('.content-chat-admin').append("<p class='user'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+                if(result[i].noidung.length  > 30){
+                    $('.content-chat-admin').append("<p class='user' style='width:80%;'>"+result[i].noidung+"</p></br>");
+                }
+                else{
+                    $('.content-chat-admin').append("<p class='user'>"+result[i].noidung+"</p></br>");
+                }
             }
         }
         $(".content-chat-admin").scrollTop($(".content-chat-admin")[0].scrollHeight);

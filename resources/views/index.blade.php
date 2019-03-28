@@ -237,7 +237,7 @@
 							</span>
 
 							<p class="stext-102 cl3 p-t-23 chitiet_sanpham_modal">
-							{{$sp->chitiet_sanpham}}
+							{!!$sp->chitiet_sanpham!!}
 							</p>
 							
 							<!--  -->

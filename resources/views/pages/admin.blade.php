@@ -63,7 +63,7 @@
                          ?>
                         <tr>
                           <td><?php echo $value['id_sanpham'] ?></td>
-                          <td><img src='../images/<?php echo $value['hinh'] ?>' width='60px' height='70px' alt=''></td>
+                          <td><img src="{{asset('images')}}/<?php echo $value['hinh'] ?>" width='60px' height='70px' alt=''></td>
                           <td><?php echo $value['tensanpham'] ?></td>
                           <td><?php echo $value['style'] ?></td>
                           <td><?php echo $value['soluong'] ?></td>

@@ -40,18 +40,18 @@ $('.icon_chat').on('click',function(){
       for(let i = 0 ; i< count; i++){
          if(result[i].user == user){
             if(result[i].noidung.length > 30){
-               $('.content_chat').append("<p class='user' style='width:100%;'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+               $('.content_chat').append("<p class='user' style='width:80%;'>"+result[i].noidung+"</p></br>");
             }
             else{
-               $('.content_chat').append("<p class='user'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+               $('.content_chat').append("<p class='user'>"+result[i].noidung+"</p></br>");
             }
          }
          else{
             if(result[i].noidung.length > 30){
-               $('.content_chat').append("<p class='admin' style='width:100%;'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+               $('.content_chat').append("<p class='admin' style='width:80%;'>"+result[i].noidung+"</p></br>");
             }
             else{
-               $('.content_chat').append("<p class='admin'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+               $('.content_chat').append("<p class='admin'>"+result[i].noidung+"</p></br>");
             }
          }
       }
@@ -65,18 +65,18 @@ $('.icon_chat').on('click',function(){
    for(let i = 0 ; i < count ; i++){
       if(result[i].user == user){
          if(result[i].noidung.length > 30){
-            $('.content_chat').append("<p class='user' style='width:100%;'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='user' style='width:80%;'>"+result[i].noidung+"</p></br>");
          }
          else{
-            $('.content_chat').append("<p class='user'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='user'>"+result[i].noidung+"</p></br>");
          }
       }
       else{
          if(result[i].noidung.length > 30){
-            $('.content_chat').append("<p class='admin' style='width:100%;'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='admin' style='width:80%;'>"+result[i].noidung+"</p></br>");
          }
          else{
-            $('.content_chat').append("<p class='admin'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='admin'>"+result[i].noidung+"</p></br>");
          }
       }
    }
@@ -90,18 +90,18 @@ socket.on('server-send-data-chat-user',function(data){
    for(let i = 0 ; i < count ; i++){
       if(result[i].user == user){
          if(result[i].noidung.length > 30){
-            $('.content_chat').append("<p class='user' style='width:100%;'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='user' style='width:80%;'>"+result[i].noidung+"</p></br>");
          }
          else{
-            $('.content_chat').append("<p class='user'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='user'>"+result[i].noidung+"</p></br>");
          }
       }
       else{
          if(result[i].noidung.length > 30){
-            $('.content_chat').append("<p class='admin' style='width:100%;'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='admin' style='width:80%;'>"+result[i].noidung+"</p></br>");
          }
          else{
-            $('.content_chat').append("<p class='admin'><span style='font-weight: bold;'></span>"+result[i].noidung+"</p></br>");
+            $('.content_chat').append("<p class='admin'>"+result[i].noidung+"</p></br>");
          }
       }
    }

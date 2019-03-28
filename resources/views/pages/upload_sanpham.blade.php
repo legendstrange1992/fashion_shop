@@ -15,7 +15,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Tên Sản Phẩm</label>
-                    <input type="text" class="form-control" name="tensanpham">
+                    <input type="text" autocomplete="off" class="form-control" name="tensanpham">
                   </div>
                 </div>
               </div>
@@ -23,7 +23,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Đơn Giá</label>
-                    <input type="text" class="form-control" name="dongia">
+                    <input type="text" autocomplete="off" class="form-control" name="dongia">
                   </div>
                 </div>
               </div>
@@ -32,8 +32,10 @@
                   <div class="form-group">
                     <label>Chi Tiết Sản Phẩm</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> thông tin nổi bật của sản phẩm</label>
-                      <textarea class="form-control" rows="5" name="chitiet_sanpham"></textarea>
+                      <textarea name="editor1"></textarea>
+                        <script>
+                                CKEDITOR.replace( 'editor1' );
+                        </script>
                     </div>
                   </div>
                 </div>

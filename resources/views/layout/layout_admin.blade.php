@@ -20,6 +20,7 @@
   <link href="{{asset('assets/css/chat.css')}}" rel="stylesheet" />
   <script src="{{asset('js')}}/jquery-3.3.1.js"></script>
   <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
  
   <style>
     a:hover{cursor: pointer;}

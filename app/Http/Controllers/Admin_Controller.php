@@ -10,8 +10,10 @@ use App\Donhang;
 use App\SanPham;
 use App\Loaisanpham;
 use App\Chitietdonhang;
+use App\Conver_Vi_To_Eng;
 class Admin_Controller extends Controller
 {
+    
     public function admin(){
     	$donhang = Donhang::all();
     	$active_admin = 'active_admin';
@@ -61,15 +63,16 @@ class Admin_Controller extends Controller
                 $file->move('images',$file_name);
             }
         }
-        $file = $request->file('file_upload');
-        $file_name = $file->getClientOriginalName();
-        $sanpham =  new SanPham();
-        $sanpham->tensanpham =  $request->tensanpham;
-        $sanpham->tensanpham_khongdau =  'aaaa';
-        $sanpham->hinh =  $file_name;
-        $sanpham->dongia =  $request->dongia;
-        $sanpham->id_theloai =  $request->id_theloai;
-        $sanpham->chitiet_sanpham =  $request->chitiet_sanpham;
+        $file                           = $request->file('file_upload');
+        $file_name                      = $file->getClientOriginalName();
+        $sanpham                        = new SanPham();
+        $sanpham->tensanpham            = $request->tensanpham;
+        $convert                        = new Conver_Vi_To_Eng();
+        $sanpham->tensanpham_khongdau   = $convert->convert_vi_to_en($request->tensanpham);
+        $sanpham->hinh                  = $file_name;
+        $sanpham->dongia                = $request->dongia;
+        $sanpham->id_theloai            = $request->id_theloai;
+        $sanpham->chitiet_sanpham       = $request->editor1;
         $sanpham->save();
         return redirect()->route('admin');
     }
