@@ -60,7 +60,14 @@
 			</div>
 
 			<div class="sidebar-content flex-w w-full p-lr-65 js-pscroll">
-				<ul class="sidebar-link w-full">
+				<ul class="sidebar-link w-full text-center">
+					<li style="padding-bottom:15px;">
+						<?php 
+							if(session()->has('avatar')){
+						?>
+						<img src="<?php echo session()->get('avatar');?>" style="border-radius:50%;object-fit: cover;" width="100" height="100" alt="">
+							<?php }?>
+					</li>
 					<?php
 						if(Auth::check()){
 					?>
@@ -69,7 +76,8 @@
 							<?php
 								$name_user = Auth::user()->name;
 							?>
-							Welcome : <span style='color:orange;font-weight:bold;'><?php echo $name_user ?></span> , 
+							
+							<span style='color:orange;font-weight:bold;'><?php echo $name_user ?></span> , 
 							<a href="{{route('logout_user')}}">Logout</a>
 						</a>
 					</li>
@@ -88,6 +96,12 @@
 							Sign Up
 						</a>
 					</li>
+					<li class="p-b-13">
+						<a href="{{route('contact')}}" class="stext-102 cl2 hov-cl1 trans-04">
+							Contact
+						</a>
+					</li>
+					
 				</ul>
 
 				<div class="sidebar-gallery w-full p-tb-30">
@@ -306,7 +320,7 @@
 						</li>
 
 						<li class="p-b-10">
-							<a class="stext-107 cl7 hov-cl1 trans-04 <?php if(Auth::check()){echo '';}else{echo 'login';} ?> " >
+							<a class="stext-107 cl7 hov-cl1 trans-04   <?php if(Auth::check()){echo "";}else{echo "login";}?> ">
 								<span style="color:#CCC;">Login</span>
 							</a>
 						</li>
@@ -447,11 +461,13 @@
 							</div>
 
 							<div class="text-center p-t-12">
-								<span class="txt1">
-									Forgot
-								</span>
 								<a class="txt2" href="#">
-									Username / Password?
+									<a href="redirect/facebook">
+										<img src="{{asset('images')}}/icons/login_fb.png" width="150" height="70" alt="">
+									</a>
+									<a href="{{route('sign_up')}}">
+										<img src="{{asset('images')}}/icons/signup.png"width="150" height="35"  alt="">
+									</a>
 								</a>
 							</div>
 						</div>

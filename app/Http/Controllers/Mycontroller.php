@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\Authenticatable;
 use App\SanPham;
 use App\Loaisanpham;
 use App\User;
-use Mail,Request;
+use Mail;
 
 class Mycontroller extends Controller
 {
@@ -68,6 +68,7 @@ class Mycontroller extends Controller
     }
     public function logout_user(){
         Auth::logout();
+        session()->forget('avatar');
         return redirect()->route('trangchu');
     }
     public function contact(){
@@ -75,10 +76,11 @@ class Mycontroller extends Controller
         return view('pages/contact',compact('loaisanpham'));
     }
     public function post_contact(Request $req){
-        $data = ["noidung" => Request::input('msg')];
+        $data = ["noidung" => $req->msg];
         Mail::send('pages.giaodien_gui_mail',$data,function($mess){
-            $mess->from(Request::input('email'),Request::input('email'));
-            $mess->to('opeypie1992@gmail.com',"Kỳ Smile")->subject(Request::input('title_mail'));
-        }); 
+            $mess->from(\Request::input('email'),\Request::input('email'));
+            $mess->to('opeypie1992@gmail.com',"Kỳ Smile")->subject(\Request::input('title_mail'));
+        });
+        return redirect()->route('trangchu'); 
     }
 }

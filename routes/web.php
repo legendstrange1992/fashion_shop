@@ -9,6 +9,9 @@ Route::get('/','Mycontroller@index')->name('trangchu');
 Route::get('contact','Mycontroller@contact')->name('contact');
 Route::post('contact','Mycontroller@post_contact')->name('post_contact');
 Route::get('chat-user','Admin_Controller@chat_user')->name('chat_user');
+
+Route::get('/redirect/{social}', 'SocialAuthController@redirect');
+Route::get('/callback/{social}', 'SocialAuthController@callback');
 // -----------------------------giỏ hàng ------------------------
 
 Route::get('add-to-cart/{id}/{sl}/{color}/{size}','Cartcontroller@addtocard');
