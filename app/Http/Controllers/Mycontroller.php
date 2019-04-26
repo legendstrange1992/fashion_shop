@@ -79,7 +79,7 @@ class Mycontroller extends Controller
         $data = ["noidung" => $req->msg];
         Mail::send('pages.giaodien_gui_mail',$data,function($mess){
             $mess->from(\Request::input('email'),\Request::input('email'));
-            $mess->to('opeypie1992@gmail.com',"Kỳ Smile")->subject(\Request::input('title_mail'));
+            $mess->to('thoaiky1992@gmail.com',"Kỳ Smile")->subject(\Request::input('title_mail'));
         });
         return redirect()->route('trangchu'); 
     }
